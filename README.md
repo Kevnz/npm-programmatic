@@ -1,7 +1,7 @@
 # npm-programmatic [![Build Status](https://travis-ci.org/Manak/npm-programmatic.svg?branch=master)](https://travis-ci.org/Manak/npm-programmatic)   
 [![NPM](https://nodei.co/npm/npm-programmatic.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/npm-programmatic/)    
 
-npm-programmatic is a library that allows you to access npm commands programmatically from javascript
+npm-programmatic is a library that allows you to access npm commands programmatically from javascript. This is a fork that fixes an issue with saving dev dependencies. If you don't need to save dev dependencies I do recommend the main version.
 ## Usage
 Every function returns a Bluebird promise.   
 CWD refers to current working directory, allowing you to ensure the command executes in a certain folder in the filesystem.
@@ -22,7 +22,7 @@ If output is set, the output of npm will be shown in the console.
     var npm = require('npm-programmatic');
     npm.install(['left-pad'], {
         cwd:'/path/to/my/project',
-        save:true
+        saveDev:true
     })
     .then(function(){
         console.log("SUCCESS!!!");
